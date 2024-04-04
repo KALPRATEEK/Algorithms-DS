@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  for size 50000 Insertion Sort; MOVE: 625356470; COMPARE:625306471
+  for size 100000 Insertion Sort; MOVE: 1163283069; COMPARE:1163433067
+  for size 200000 Insertion Sort; MOVE: 254770447; COMPARE:254420450
+  for size 300000 Insertion Sort; MOVE: 1295223251; COMPARE:1294573255
+  for size 400000 Insertion Sort; MOVE: 1622316163; COMPARE:1623366158
+  for size 500_000 Insertion Sort; MOVE: 746101915; COMPARE:744551921
+  for size 600_000 Insertion Sort; MOVE: 725282366; COMPARE:723132373
+  for size 800_000 Insertion Sort; MOVE: 1570778715; COMPARE:1567828723
+----------------------------------------------------------------------------------------------
+
+
+  for size 50000 Bubble Sort; MOVE: 624188680; COMPARE:1249922350
+  for size 100000 Bubble Sort; MOVE: 1167838461; COMPARE:1954828026
+  for size 200000 Bubble Sort; MOVE: 237934017; COMPARE:479880520
+  for size 300000 Bubble Sort; MOVE: 1283046533; COMPARE:1765027106
+  for size 400000 Bubble Sort; MOVE: 1645327489; COMPARE:925142775
+  for size 500_000 Bubble Sort; MOVE: 747133557; COMPARE:1370574376
+
+
+-----------------------------------------------------------------------------------------------
+
+
+  for size 200000 Quick Sort; MOVE: 2220752; COMPARE:4354442
+  for size 400000 Quick Sort; MOVE: 6632686; COMPARE:13171417
+  for size 600000 Quick Sort; MOVE: 13449509; COMPARE:27035311
+  for size 800000 Quick Sort; MOVE: 22819277; COMPARE:45935078
+  for size 900000 Quick Sort; MOVE: 33308755; COMPARE:68263532
+  for size 200_0000 Quick Sort; MOVE: 58968815; COMPARE:119392707
+  for size 400_0000 Quick Sort; MOVE: 111342245; COMPARE:226835312
+  for size 600_0000 Quick Sort; MOVE: 192905310; COMPARE:395835600
+  for size 700_0000 Quick Sort; MOVE: 297298631; COMPARE:602648293
+  for size 800_0000 Quick Sort; MOVE: 418670741; COMPARE:843988988
+  for size 14_000_000 MergeSort; MOVE: 626458399; COMPARE:1258977684
+  for size 16_000_000 MergeSort; MOVE: 827849759; COMPARE:1667730728
+-----------------------------------------------------------------------------------------------
+
+
+
+
+  for size 200000 MergeSort; MOVE: 3537856; COMPARE:3272531
+  for size 400000 MergeSort; MOVE: 11013568; COMPARE:10217446
+  for size 600000 MergeSort; MOVE: 22564992; COMPARE:20986478
+  for size 800000 MergeSort; MOVE: 38316416; COMPARE:35677660
+  for size 900000 MergeSort; MOVE: 56167840; COMPARE:52356329
+  for size 200_000 MergeSort; MOVE: 98070688; COMPARE:91704944
+  for size 400_000 MergeSort; MOVE: 185876384; COMPARE:174401398
+  for size 600_000 MergeSort; MOVE: 321487776; COMPARE:302045152
+  for size 700_000 MergeSort; MOVE: 481099168; COMPARE:452493027
+  for size 8000_000 MergeSort; MOVE: 664710560; COMPARE:625886169
+  for size 14_000_000 MergeSort; MOVE: 997933344; COMPARE:940780549
+  for size 16_000_000 MergeSort; MOVE: 1331156128; COMPARE:1110177605
+-----------------------------------------------------------------------------------------
+
+
+
+
+  for size 50000 Selection Sort; MOVE: 49987; COMPARE:1249975000
+  for size 100000 Selection Sort; MOVE: 149967; COMPARE:1954957704
+  for size 200000 Selection Sort; MOVE: 349955; COMPARE:480021224
+  for size 300000 Selection Sort; MOVE: 649944; COMPARE:1764769032
+  for size 400000 Selection Sort; MOVE: 1049927; COMPARE:925619640
+  for size 500000 Selection Sort; MOVE: 1549907; COMPARE:1371318056
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
