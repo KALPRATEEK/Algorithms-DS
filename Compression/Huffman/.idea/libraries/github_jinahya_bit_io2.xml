@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="github.jinahya.bit.io2" type="repository">
+    <properties maven-id="com.github.jinahya:bit-io2:0.3.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../bit-io2-0.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../bit-io2-0.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/bit-io2-0.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,7 @@
+moabctFÃEnieferndaan Pov// Fgtrty,Gr¶Ã(Anzahl thalElzurÃ¼ck null // ErmiPo des EOf :Sequce{1.s)}x; fifx) txlsenullcnullEnullffoundIdif )::apy)mA@p + imIsL.g(s) :itAt:,  I pAdd:ddAtCorrectPositn:AryLt < :St(dex:Inger)y =tss  <pe g):OclAny Seqnce{1. - 1>ira(i; :L= .h|m.).ze:Ieger = 	S{shead}->closu(e |.nt)->exudg(null)->size()
+	lassm attribu eme:OclAnyassociatn A_nknIms betwepreviousLiItem[0..1] role en
+
+compositi A_LtHd betweenkedLt[ ltm[0..1] role head
+end
+constraints conxt LtItem v muBeTrue:
+    self.list.isDefined() or self.previous.isDefined()

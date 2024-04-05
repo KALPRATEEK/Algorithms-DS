@@ -1,0 +1,171 @@
+public class Huffman {
+    static final int chars = 256;
+    int[] freq = new int[chars];
+    Map<Integer, String> codeTable = new HashMap<>();
+    PriorityQueue<MyBinaryTree<HuffNode>> heap = new PriorityQueue<>(Comparator.comparingInt(tree -> tree.getRoot().getData().frequency));
+    Stack<Integer> path = new Stack<>();
+    MyBinaryTree<HuffNode> root;
+
+    public void calculateCharacterFrequencies(InputStream inputStream) throws IOException {
+        int character;
+        while ((character = inputStream.read()) != -1) {
+            freq[character]++;
+        }
+
+        for (int ch = 0; ch < chars; ch++) {
+            if (freq[ch] > 0) {
+                heap.add(new MyBinaryTree<>(new HuffNode(ch, freq[ch])));
+            }
+        }
+    }
+
+    public void buildHuffmanTree() {
+        while (heap.size() > 1) {
+            MyBinaryTree<HuffNode> node1 = heap.poll();
+            MyBinaryTree<HuffNode> node2 = heap.poll();
+
+            HuffNode newNodeData = new HuffNode(-1, node1.getData().frequency + node2.getData().frequency);
+            MyBinaryTree<HuffNode> newNode = new MyBinaryTree<>(newNodeData);
+            newNode.getRoot().setLeft(node1.getRoot());
+            newNode.getRoot().setRight(node2.getRoot());
+
+            heap.add(newNode);
+        }
+        root = heap.poll();
+    }
+
+    public void calculateCodeFromHuffmanTree() {
+        traverseHuffmanTree(root, new StringBuilder());
+    }
+
+    private void traverseHuffmanTree(BinaryTree<HuffNode> aTree, StringBuilder currentPath) {
+        if (aTree == null) {
+            return;
+        }
+
+        if (aTree.isLeaf()) {
+            char character = (char) aTree.getData().character;
+            String code = currentPath.toString();
+            System.out.println(character + "\t" + code);
+            codeTable.put(aTree.getData().character, code);
+            return;
+        }
+
+        currentPath.append('0');
+        traverseHuffmanTree(aTree.getLeftNode(), new StringBuilder(currentPath));
+        currentPath.deleteCharAt(currentPath.length() - 1);
+
+        currentPath.append('1');
+        traverseHuffmanTree(aTree.getRightNode(), new StringBuilder(currentPath));
+        currentPath.deleteCharAt(currentPath.length() - 1);
+    }
+
+    public void writeCharacterFrequencies(OutputStream outputStream) throws IOException {
+        for (int ch = 0; ch < chars; ch++) {
+            if (freq[ch] > 0) {
+                outputStream.write(ch);
+                outputStream.write(freq[ch]);
+            }
+        }
+    }
+
+    public void encodeDataFile(InputStream inputStream, BitOutput bitOut) throws IOException {
+        // Build Huffman tree and calculate codes
+        buildHuffmanTree();
+        calculateCodeFromHuffmanTree();
+
+        try {
+            int character;
+            while ((character = inputStream.read()) != -1) {
+                String code = codeTable.get(character);
+
+                // Check if code is null for the current character
+                if (code != null) {
+                    System.out.println("Character: " + (char) character + ", Huffman Code: " + code);
+
+                    // Write each bit of the Huffman code
+                    for (char bit : code.toCharArray()) {
+                        // Convert char '0' or '1' to boolean
+                        boolean isBitSet = (bit == '1');
+                        bitOut.writeBoolean(isBitSet);
+                    }
+                } else {
+                    // Handle the case when there is no Huffman code for the character
+                    System.out.println("Warning: No Huffman code for character " + character);
+                }
+            }
+        } finally {
+            bitOut.align(1);
+            // Close the BitOutput stream here
+        }
+    }
+
+    // B) Decoding
+    public void readCharacterFrequencies(InputStream inputStream) throws IOException {
+        int character;
+        while ((character = inputStream.read()) != -1) {
+            int frequency = inputStream.read();
+            freq[character] = frequency;
+        }
+        for (int ch = 0; ch < chars; ch++) {
+            if (freq[ch] > 0) {
+                heap.add(new MyBinaryTree<>(new HuffNode(ch, freq[ch])));
+            }
+        }
+    }
+
+    public void decodeDataFile(BitInput bitIn, OutputStream outputStream) throws IOException {
+        try {
+            while (true) {
+                BinaryTree<HuffNode> currentNode = root;
+
+                while (!currentNode.isLeaf()) {
+                    boolean bit = bitIn.readBoolean();  // Assuming readBoolean for reading a bit
+                    currentNode = bit ? currentNode.getRightNode() : currentNode.getLeftNode();
+                }
+
+                outputStream.write(currentNode.getData().character);
+            }
+        } catch (EOFException e) {
+            // End-of-file reached, no more bits to read
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Huffman huffman = new Huffman();
+
+        // Step 2: Open the input file for reading
+        try (InputStream input = new FileInputStream("abs.txt")) {
+            huffman.calculateCharacterFrequencies(input);
+            huffman.buildHuffmanTree();
+            huffman.calculateCodeFromHuffmanTree();
+
+            // Print frequencies for debugging
+            System.out.println("Character Frequencies:");
+            for (int i = 0; i < Huffman.chars; i++) {
+                if (huffman.freq[i] > 0) {
+                    System.out.println((char) i + ": " + huffman.freq[i]);
+                }
+            }
+            System.out.println("Huffman Tree Built!");
+            // Print Huffman codes for debugging
+            System.out.println("Huffman Codes:");
+            for (Map.Entry<Integer, String> entry : huffman.codeTable.entrySet()) {
+                System.out.println((char) (int) entry.getKey() + ": " + entry.getValue());
+            }
+        }
+
+        // Step 3: Open the input file again for reading
+        try (InputStream input = new FileInputStream("abs.txt");
+             // Step 4: Open the output file for writing the compressed data
+             OutputStream fileOutputStream = new FileOutputStream("compressFile.huff")) {
+            BitOutput bitOutput = BitOutputFactory.from(fileOutputStream);
+
+            // Step 5: Use encodeDataFile to encode the input file and write compressed data
+            huffman.encodeDataFile(input, bitOutput);
+            bitOutput.align(1);
+
+            System.out.println("File encoding completed successfully.");
+        }
+    }
+}

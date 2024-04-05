@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for bit-io2" enabled="true">
+        <sourceOutputDir name="../generated-sources/annotations" />
+        <sourceTestOutputDir name="../generated-test-sources/test-annotations" />
+        <module name="bit-io2.main" />
+        <module name="bit-io2.test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bit-io2" options="-Xlint" />
+      <module name="bit-io2.main" options="-Xlint" />
+      <module name="bit-io2.test" options="-Xlint" />
+    </option>
+  </component>
+</project>

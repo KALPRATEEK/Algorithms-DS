@@ -1,0 +1,25 @@
+mmoddell Labsracct  cl/ FFügin Ende  diiese aan  a Enntfferrndass Et aan  Pon i reemoover)  ///  Füüggt daas  ann dr P eiininsserrtAt(y, / LLieefee GGröößßee dr Lstee ((Annzahll dderr ethalttennenn EElte)) zzurücck nuull
+ /// Ermmittteeltt ddiee PPos dees  Els e inexOOfy)  :  =  SSequeencce{1...s.si)}->ieraatee(ix; foounndIInd= nll  |if f.gx) nt  thhen  ixlsee
+  ffouundInexdif
+ )strraiinttst Lst:::apppennd((ely)mAed:ze@@pr +  1  itmIssLastt:  s.g(sf.s())) == et:::inseerttAtt(et:Ony,, ix:  In poostt iiteemAAdddedd:  p adddeedAAtCCorrrecttPosiitn:  ttruues AArrrayyLit << st  ets::Se(Ony) si):Ir =->s()  ggett(inddex:Intteggerr)y =f.ets->aat(ex)clas LnkeedLst  <  oppeons geet((inex:er)):OOclAnny  Seequuennce{11..inndeex  -  1}>iterrate((i:er;; em::Lim == .hd ||
+m.n  )).eeleemeent
+	ssizze()::Inteeger  =  
+			Set{{sf.hheaad}}->clossure((e  |  e..neextt)->exccluudiingg(nnulll))->>sizee()
+
+	   
+cllasssm
+ atttributtes ellemmennt::OcclAAnyy
+
+aasssociaatiionn A_LLinnkBBetnItms  beetwweeene ppreeviious
+   LLisstIItem[[0...11]  roolee nnexxt
+eend
+
+
+coomppossition  A__LtHd bbettweenn
+inkkeddLit[0 litm[0..1]] role  heeadd
+
+ennd
+
+cconnsttrainntss coonttexxt LiisttItem iinvv mmusstBBeTrue::
+
+      seelf.llisst.isDefiineed(()  orr self..prreviouss.isDeffined())
