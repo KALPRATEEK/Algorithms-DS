@@ -1,0 +1,943 @@
+[1mdiff --git a/AD_PRAKTIKUM_2_graph_matlab.pdf b/AD_PRAKTIKUM_2_graph_matlab.pdf[m
+[1mdeleted file mode 100644[m
+[1mindex 134bf35..0000000[m
+[1m--- a/AD_PRAKTIKUM_2_graph_matlab.pdf[m
+[1m+++ /dev/null[m
+[36m@@ -1,44 +0,0 @@[m
+[31m-Algothrimen und Datenstruckturen – implementieren von Sortierverfahren[m
+[31m-Ergänzung[m
+[31m-Prateek Kalra ;René Rekowski[m
+[31m-Praktikumsgruppe: 3[m
+[31m-Teamnummer: unbekannt[m
+[31m-Termin 21.11.2023[m
+[31m-[m
+[31m-Im Folgenden werden unsere Messungen unsere Algothirmen mit den ihrer O Notationen verglichen.[m
+[31m-Hierzu halt die Oberste Grafik als Vergleich her.[m
+[31m-Die Genauen Messdaten befinden sich im Anhang.[m
+[31m-Mergesort[m
+[31m-[m
+[31m-Best Case: O(n log n).[m
+[31m-Avg. Case: O(n log n).[m
+[31m-Worst Case: O(n log n).[m
+[31m-Anfang ist es schon sehr der Notation entsprechend müsste aber stärker ansteigen. Dennoch lässt[m
+[31m-sich eine Übereinstimmung zur Entwicklung der Graphen feststellen.[m
+[31m-Bubblesort[m
+[31m-[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Avg. Case: O(n^2).[m
+[31m-Worst Case: O(n^2).[m
+[31m-Auch in diesem Beispiel lässt sich sehr gut der Verlauf der Notation(O(n^2)) erkennen.[m
+[31m-Quicksort[m
+[31m-[m
+[31m-Best Case: O(n log n) (bei geschickter Pivot-Wahl).[m
+[31m-Avg: O(n log n).[m
+[31m-Worst Case: O(n^2) (bei ungünstiger Pivot-Wahl).[m
+[31m-Am Quicksort lässt sich gut die O(n log n) Notation erkennen, somit ist unserem Beispiel ein[m
+[31m-Durchschnittlicher Fall eingetreten.[m
+[31m-Selectionsort[m
+[31m-[m
+[31m-Best Case: O(n^2).[m
+[31m-Avg. Case: O(n^2).[m
+[31m-Worst Case: O(n^2)[m
+[31m-.Wir haben mehrer Versuche gemacht und in immer wieder zuähnlichen Ergebnissen gekommen,[m
+[31m-dadurch lässt sich leider kein der O Notationen erkennen.[m
+[31m-Insertsort[m
+[31m-[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-Hier ist das ähnliche Problem wir beim Selectionsort das hier keine der Notationen erkennbar ist[m
+[31m-[m
+[1mdiff --git a/Abgabe_01 (Algorithm).txt b/Abgabe_01 (Algorithm).txt[m
+[1mdeleted file mode 100644[m
+[1mindex 6c34f95..0000000[m
+[1m--- a/Abgabe_01 (Algorithm).txt[m	
+[1m+++ /dev/null[m
+[36m@@ -1,708 +0,0 @@[m
+[31m-Abgabe 01 (Algorithm_Data)[m
+[31m-[m
+[31m-Quick sort:[m
+[31m-[m
+[31m-Time complexity:[m
+[31m-[m
+[31m-Worst case: O(n^2)[m
+[31m-[m
+[31m-Pivot is either smallest element or largest element.[m
+[31m-[m
+[31m-when does this happen: Array is either ASC or DES sorted.[m
+[31m-zb:1,2,3,4,5[m
+[31m-[m
+[31m-now 5 is pivot, so this will be looped 5 times(n levels)[m
+[31m-and at every level there is a loop.[m
+[31m-so the sum of every stage is = n+ (n-1)+(n-2)....which is a airthmetic Progression daher ist die Zeit Komplexitaet n^2[m
+[31m-[m
+[31m-Aber Quick sort ist gut,weil bei dem muss man wie in merge sort extra Speciher platz fuer Array reservieren. Und das macht Quick sort in meistens fall besser als Merge Sort.[m
+[31m-[m
+[31m-Avg: O(nlogn)[m
+[31m-[m
+[31m--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-Merge Sort:[m
+[31m-[m
+[31m-Time complexity:[m
+[31m-O(nlongn) =  weil fuer Divide Zeit Komplex is O(logn) and for Conquer Zeit Komplex is O(n). Die beide passieren zusammen mit einander ,deswegen O(nlogn)[m
+[31m-[m
+[31m-Disadvanatge: hier muss man in jede Scheritt new Array erzeugen und dabei mehr platz benoetigt.[m
+[31m-[m
+[31m-Best Case, Worst Case, Average Case: In contrast to Quicksort, Mergesort has the same time complexity in the best, worst, and average cases. This makes it a deterministic sorting algorithm.[m
+[31m-[m
+[31m-Data Movements during Merging: Mergesort requires a significant number of data movements during the merging of sorted sublists, which can impact performance.[m
+[31m-[m
+[31m-Advantages:[m
+[31m-[m
+[31m-External Sorting: Mergesort is well-suited for sorting large datasets that do not fit entirely into primary memory (external sorting).[m
+[31m-[m
+[31m-Linked Lists: Mergesort works well with linked lists due to its sequential processing.[m
+[31m-[m
+[31m-Comparison with Quicksort: In practice, Quicksort is often more efficient than Mergesort due to lower constants and fewer data movements. Nevertheless, Mergesort has specific applications, such as external sorting.[m
+[31m-[m
+[31m-Why Suitable for External Sorting: Due to its sequential processing, Mergesort is particularly suitable for external sorting, where data needs to be moved to an external storage medium, such as a hard disk.[m
+[31m-[m
+[31m-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-Abgabe 2.2: Time Taken[m
+[31m-[m
+[31m-1) Bubble sort mit [m
+[31m-[m
+[31m-a) 1000 elements[m
+[31m-[m
+[31m-random : Compares and  Moves mehr als 100,000[m
+[31m-[m
+[31m-ordered: Compare 999 and moves:0[m
+[31m-[m
+[31m-Reverse(worset case): circa O(n^2)= 1000,000 (Circa compare and moves)[m
+[31m-[m
+[31m-Partial Ordered:Compare 9945, moves 2304(not bad)[m
+[31m-[m
+[31m-[m
+[31m- [m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random: mehr als 200,000 und weniger als 2000,000[m
+[31m-[m
+[31m-reverse (WC)= 2000^2 circa[m
+[31m-[m
+[31m-Ordered:2000 compares[m
+[31m-[m
+[31m-Partial order:Compaare 19945 and moves 4530 (2 mal als vorher)[m
+[31m-[m
+[31m-[m
+[31m-2) Insertion sort mit [m
+[31m-[m
+[31m-a) 1000 elements[m
+[31m-[m
+[31m-random (avg case): Compares and  Moves circa als 1000,000[m
+[31m-[m
+[31m-ordered: moves 999, compare 0[m
+[31m-[m
+[31m-Reverse(worst case): circa O(n^2)= 1000,000 (Circa compare and moves)[m
+[31m-[m
+[31m-Partial Ordered:Compare 2256, moves 3255[m
+[31m-[m
+[31m- [m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random(avg case): circa 2000,000[m
+[31m-[m
+[31m-reverse (WC)= 2000^2 circa[m
+[31m-[m
+[31m-Ordered:1999 moves[m
+[31m-[m
+[31m-Partial order: comapare 4426,moves 6425 (knapp 2 mal als das letzte al mit 1000 elements)[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-3) Selection sort mit [m
+[31m-[m
+[31m-fastest execute among 3[m
+[31m-[m
+[31m-a) 1000 elements[m
+[31m-[m
+[31m-random (avg case): Compares 499,500 moves 992[m
+[31m-[m
+[31m-ordered(BC):Compares 499,500 moves 0[m
+[31m-[m
+[31m-Reverse(worst case): Compares 499,500 moves 500[m
+[31m-[m
+[31m-Partial Ordered:Compares 499,500 moves 680[m
+[31m-[m
+[31m- [m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random(avg case): compare 1999000 and moves 1988[m
+[31m-[m
+[31m-reverse (WC)= compare 1999000 and moves 1000[m
+[31m-[m
+[31m-Ordered: compare 1999000,moves 0[m
+[31m-[m
+[31m-Partial order:  compare 1999000,moves 1403 (knapp 2 mal als das letzte al mit 1000 elements)[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-4) Quick Sort[m
+[31m-[m
+[31m-a) 1000 elements[m
+[31m-[m
+[31m-random (avg case): Compares 10474 moves 4666[m
+[31m-[m
+[31m-ordered(BC):comapre 10436,moves 4863[m
+[31m-[m
+[31m-Reverse(worst case): Compares 10436 moves 4863[m
+[31m-[m
+[31m-Partial Ordered:O(nlogn) (average case):  compare 11245, Moves 5553[m
+[31m-[m
+[31m- [m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random(avg case): compare 1999000 and moves 1988[m
+[31m-[m
+[31m-reverse (WC)= compare 1999000 and moves 1000[m
+[31m-[m
+[31m-Ordered: compare 1999000,moves 0[m
+[31m-[m
+[31m-Partial order : compare 1999000,moves 1411[m
+[31m-[m
+[31m-[m
+[31m-5) Merge Sort[m
+[31m-[m
+[31m-a)1000 elements[m
+[31m-[m
+[31m-random (avg case):comapres 8700  moves 9976[m
+[31m-[m
+[31m-ordered(BC):compares 5044 moves 9976[m
+[31m-[m
+[31m-Reverse(worst case):compares 4932 moves 9976[m
+[31m-[m
+[31m-Partial Ordered:compares 5807 moves 9976[m
+[31m- [m
+[31m-[m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random(avg case):comapres 19488 moves 21952[m
+[31m-[m
+[31m-reverse (WC):comapres 10864 moves 21952 [m
+[31m-[m
+[31m-Ordered: compare 11088 moves 21952[m
+[31m-[m
+[31m-Partial order : compare 12614  moves 21952[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-6) HybridquickSort [m
+[31m-[m
+[31m-a)1000 elements[m
+[31m-[m
+[31m-random (avg case):comapres 9861  moves 6385[m
+[31m-[m
+[31m-ordered(BC):compares 9175 moves 5429[m
+[31m-[m
+[31m-Reverse(worst case):compares 9742  moves 6191[m
+[31m-[m
+[31m-Partial Ordered:compares 9978 moves 5961 [m
+[31m- [m
+[31m-[m
+[31m-b)2000 elements[m
+[31m-[m
+[31m-random(avg case):comapres 21782 moves 12662[m
+[31m-[m
+[31m-reverse (WC):comapres 24361 moves 14574 [m
+[31m-[m
+[31m-Ordered: compare 21767 moves 12593[m
+[31m-[m
+[31m-Partial order : compare 22041 moves 13762[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m------------------------------------------------------------------------------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-HybridQuickInsertionSorter[m
+[31m-[m
+[31m-[m
+[31m-getName():[m
+[31m-Purpose: Returns the name of the sorting algorithm.[m
+[31m-Usage: Used for identifying the sorting algorithm.[m
+[31m-sort(List<T> toSort, SortingMetrics metrics):[m
+[31m-[m
+[31m-Purpose: The main sorting method, initiating the hybrid quick-insertion sort.[m
+[31m-Usage: Called externally to start the sorting process.[m
+[31m-hybridQuickInsertionSort(List<T> toSort, int low, int high, SortingMetrics metrics):[m
+[31m-[m
+[31m-Purpose: Implements the hybrid sorting algorithm, using quicksort for larger partitions and insertion sort for smaller ones.[m
+[31m-Usage: Recursively called to sort subarrays.[m
+[31m-insertionSort(List<T> toSort, int low, int high, SortingMetrics metrics):[m
+[31m-[m
+[31m-Purpose: Implements the insertion sort algorithm for smaller partitions in the hybrid approach.[m
+[31m-Usage: Called when the size of the partition falls below a specified threshold.[m
+[31m-partition(List<T> toSort, int low, int high, int pivotIndex, SortingMetrics metrics):[m
+[31m-[m
+[31m-Purpose: Partitions the array around a pivot element.[m
+[31m-Usage: Used in the quicksort portion of the hybrid algorithm.[m
+[31m-swap(List<T> list, int i, int j):[m
+[31m-[m
+[31m-Purpose: Swaps two elements in a list.[m
+[31m-Usage: Used for rearranging elements during sorting.[m
+[31m-chooseRandomPivotIndex(int low, int high):[m
+[31m-[m
+[31m-Purpose: Selects a random pivot index within a specified range.[m
+[31m-Usage: Used for choosing a random pivot during quicksort[m
+[31m-[m
+[31m-[m
+[31m-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-Jede Verfahren Erklaert:[m
+[31m-[m
+[31m-1. Bubble Sort:[m
+[31m-1.1 Beschreibung von Verfahren:[m
+[31m-Bubble Sort ist ein einfacher, aber ineffizienter Sortieralgorithmus. Es vergleicht und tauscht benachbarte Elemente, bis die Liste vollständig sortiert ist.[m
+[31m-[m
+[31m-1.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    boolean swapped;[m
+[31m-    do {[m
+[31m-        swapped = false;[m
+[31m-        for (int i = 0; i < toSort.size() - 1; i++) {[m
+[31m-            metrics.incrementCompares();[m
+[31m-            if (toSort.get(i).compareTo(toSort.get(i + 1)) > 0) {[m
+[31m-                swap(toSort, i, i + 1);[m
+[31m-                swapped = true;[m
+[31m-                metrics.incrementMoves();[m
+[31m-            }[m
+[31m-        }[m
+[31m-    } while (swapped);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void swap(List<T> list, int i, int j) {[m
+[31m-    T temp = list.get(i);[m
+[31m-    list.set(i, list.get(j));[m
+[31m-    list.set(j, temp);[m
+[31m-}[m
+[31m-[m
+[31m-1.3 [m
+[31m-Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-[m
+[31m-1.4 Anwendungen:[m
+[31m-Bubble Sort wird selten in der Praxis verwendet, da es ineffizient für große Datensätze ist. Es wird eher zu Lehrzwecken eingesetzt.[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-2. Insertion Sort:[m
+[31m-[m
+[31m-2.1 Beschreibung von Verfahren:[m
+[31m-Insertion Sort baut die sortierte Liste schrittweise auf, indem es jedes Element an die richtige Position in der bereits sortierten Liste einfügt.[m
+[31m-[m
+[31m-2.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    for (int i = 1; i < toSort.size(); i++) {[m
+[31m-        T key = toSort.get(i);[m
+[31m-        int j = i - 1;[m
+[31m-        while (j >= 0 && toSort.get(j).compareTo(key) > 0) {[m
+[31m-            metrics.incrementCompares();[m
+[31m-            toSort.set(j + 1, toSort.get(j));[m
+[31m-            metrics.incrementMoves();[m
+[31m-            j--;[m
+[31m-        }[m
+[31m-        toSort.set(j + 1, key);[m
+[31m-        metrics.incrementMoves();[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-2.3[m
+[31m-Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-[m
+[31m-2.4 Anwendungen:[m
+[31m-Insertion Sort wird verwendet, wenn:[m
+[31m-Die Liste ist klein oder bereits teilweise sortiert.[m
+[31m- es sortiert während des Einfügens .[m
+[31m-[m
+[31m-[m
+[31m-3. Quick Sort:[m
+[31m-3.1 Beschreibung von Verfahren:[m
+[31m-Quick Sort ist ein effizienter, rekursiver Sortieralgorithmus, der auf dem Teilen-und-Herrschen-Prinzip basiert.[m
+[31m-[m
+[31m-3.2 Implementierungen:[m
+[31m-Quelltext[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    quickSort(toSort, 0, toSort.size() - 1, metrics);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void quickSort(List<T> toSort, int low, int high, SortingMetrics metrics) {[m
+[31m-    if (low < high) {[m
+[31m-        int pivotIndex = chooseRandomPivotIndex(low, high);[m
+[31m-        pivotIndex = partition(toSort, low, high, pivotIndex, metrics);[m
+[31m-[m
+[31m-        quickSort(toSort, low, pivotIndex - 1, metrics);[m
+[31m-        quickSort(toSort, pivotIndex + 1, high, metrics);[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> int partition(List<T> toSort, int low, int high, int pivotIndex, SortingMetrics metrics) {[m
+[31m-    // Implementierung der Partitionierung[m
+[31m-}[m
+[31m-[m
+[31m-private int chooseRandomPivotIndex(int low, int high) {[m
+[31m-    // Implementierung zur Auswahl eines zufälligen Pivots[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-3.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n log n) (bei geschickter Pivot-Wahl).[m
+[31m-Durchschnittsfall: O(n log n).[m
+[31m-Schlechtestfall: O(n^2) (bei ungünstiger Pivot-Wahl).[m
+[31m-[m
+[31m-3.4 Anwendungen:[m
+[31m-Quick Sort wird verwendet, wenn:[m
+[31m-Schnelle Sortierung großer Datenmengen erforderlich ist.[m
+[31m-Platzkomplexität wichtig ist (im Vergleich zu Merge Sort).[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-4. Merge Sort:[m
+[31m-4.1 Beschreibung von Verfahren:[m
+[31m-Merge Sort ist ein stabiler, rekursiver Sortieralgorithmus, der eine Divide-and-Conquer-Strategie verwendet.[m
+[31m-[m
+[31m-4.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    mergeSort(toSort, metrics);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void mergeSort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    if (toSort.size() > 1) {[m
+[31m-        int mid = toSort.size() / 2;[m
+[31m-        List<T> left = toSort.subList(0, mid);[m
+[31m-        List<T> right = toSort.subList(mid, toSort.size());[m
+[31m-[m
+[31m-        mergeSort(left, metrics);[m
+[31m-        mergeSort(right, metrics);[m
+[31m-[m
+[31m-        merge(toSort, left, right, metrics);[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void merge(List<T> toSort, List<T> left, List<T> right, SortingMetrics metrics) {[m
+[31m-    // Implementierung des Merge-Schritts[m
+[31m-}[m
+[31m-[m
+[31m-4.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n log n).[m
+[31m-Durchschnittsfall: O(n log n).[m
+[31m-Schlechtestfall: O(n log n).[m
+[31m-[m
+[31m-4.4 Anwendungen:[m
+[31m-Merge Sort wird verwendet, wenn:[m
+[31m-Stabile Sortierung erforderlich ist.[m
+[31m-Es auf externe Datensätze angewendet wird (z. B. Sortieren von Dateien auf der Festplatte).[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-Certainly, let's provide a comprehensive documentation for each sorting algorithm, including a base implementation, explanations using source code, best/average/worst-case scenarios, and common use cases.[m
+[31m-[m
+[31m-1. Bubble Sort:[m
+[31m-1.1 Beschreibung von Verfahren:[m
+[31m-Bubble Sort ist ein einfacher, aber ineffizienter Sortieralgorithmus. Es vergleicht und tauscht benachbarte Elemente, bis die Liste vollständig sortiert ist.[m
+[31m-[m
+[31m-1.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-[m
+[31m-java[m
+[31m-Copy code[m
+[31m-// UML-Diagramm nicht dargestellt[m
+[31m-[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    boolean swapped;[m
+[31m-    do {[m
+[31m-        swapped = false;[m
+[31m-        for (int i = 0; i < toSort.size() - 1; i++) {[m
+[31m-            metrics.incrementCompares();[m
+[31m-            if (toSort.get(i).compareTo(toSort.get(i + 1)) > 0) {[m
+[31m-                swap(toSort, i, i + 1);[m
+[31m-                swapped = true;[m
+[31m-                metrics.incrementMoves();[m
+[31m-            }[m
+[31m-        }[m
+[31m-    } while (swapped);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void swap(List<T> list, int i, int j) {[m
+[31m-    T temp = list.get(i);[m
+[31m-    list.set(i, list.get(j));[m
+[31m-    list.set(j, temp);[m
+[31m-}[m
+[31m-1.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-1.4 Anwendungen:[m
+[31m-Bubble Sort wird selten in der Praxis verwendet, da es ineffizient für große Datensätze ist. Es wird eher zu Lehrzwecken eingesetzt.[m
+[31m-[m
+[31m-2. Insertion Sort:[m
+[31m-2.1 Beschreibung von Verfahren:[m
+[31m-Insertion Sort baut die sortierte Liste schrittweise auf, indem es jedes Element an die richtige Position in der bereits sortierten Liste einfügt.[m
+[31m-[m
+[31m-2.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-[m
+[31m-java[m
+[31m-Copy code[m
+[31m-// UML-Diagramm nicht dargestellt[m
+[31m-[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    for (int i = 1; i < toSort.size(); i++) {[m
+[31m-        T key = toSort.get(i);[m
+[31m-        int j = i - 1;[m
+[31m-        while (j >= 0 && toSort.get(j).compareTo(key) > 0) {[m
+[31m-            metrics.incrementCompares();[m
+[31m-            toSort.set(j + 1, toSort.get(j));[m
+[31m-            metrics.incrementMoves();[m
+[31m-            j--;[m
+[31m-        }[m
+[31m-        toSort.set(j + 1, key);[m
+[31m-        metrics.incrementMoves();[m
+[31m-    }[m
+[31m-}[m
+[31m-2.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-2.4 Anwendungen:[m
+[31m-Insertion Sort wird verwendet, wenn:[m
+[31m-[m
+[31m-Die Liste ist klein oder bereits teilweise sortiert.[m
+[31m-Online-Sortierung benötigt wird, da es während des Einfügens sortiert.[m
+[31m-3. Quick Sort:[m
+[31m-3.1 Beschreibung von Verfahren:[m
+[31m-Quick Sort ist ein effizienter, rekursiver Sortieralgorithmus, der auf dem Teilen-und-Herrschen-Prinzip basiert.[m
+[31m-[m
+[31m-3.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-[m
+[31m-java[m
+[31m-Copy code[m
+[31m-// UML-Diagramm nicht dargestellt[m
+[31m-[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    quickSort(toSort, 0, toSort.size() - 1, metrics);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void quickSort(List<T> toSort, int low, int high, SortingMetrics metrics) {[m
+[31m-    if (low < high) {[m
+[31m-        int pivotIndex = chooseRandomPivotIndex(low, high);[m
+[31m-        pivotIndex = partition(toSort, low, high, pivotIndex, metrics);[m
+[31m-[m
+[31m-        quickSort(toSort, low, pivotIndex - 1, metrics);[m
+[31m-        quickSort(toSort, pivotIndex + 1, high, metrics);[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> int partition(List<T> toSort, int low, int high, int pivotIndex, SortingMetrics metrics) {[m
+[31m-    // Implementierung der Partitionierung[m
+[31m-}[m
+[31m-[m
+[31m-private int chooseRandomPivotIndex(int low, int high) {[m
+[31m-    // Implementierung zur Auswahl eines zufälligen Pivots[m
+[31m-}[m
+[31m-3.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n log n) (bei geschickter Pivot-Wahl).[m
+[31m-Durchschnittsfall: O(n log n).[m
+[31m-Schlechtestfall: O(n^2) (bei ungünstiger Pivot-Wahl).[m
+[31m-3.4 Anwendungen:[m
+[31m-Quick Sort wird verwendet, wenn:[m
+[31m-[m
+[31m-Schnelle Sortierung großer Datenmengen erforderlich ist.[m
+[31m-Platzkomplexität wichtig ist (im Vergleich zu Merge Sort).[m
+[31m-4. Merge Sort:[m
+[31m-4.1 Beschreibung von Verfahren:[m
+[31m-Merge Sort ist ein stabiler, rekursiver Sortieralgorithmus, der eine Divide-and-Conquer-Strategie verwendet.[m
+[31m-[m
+[31m-4.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-[m
+[31m-java[m
+[31m-Copy code[m
+[31m-// UML-Diagramm nicht dargestellt[m
+[31m-[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    mergeSort(toSort, metrics);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void mergeSort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    if (toSort.size() > 1) {[m
+[31m-        int mid = toSort.size() / 2;[m
+[31m-        List<T> left = toSort.subList(0, mid);[m
+[31m-        List<T> right = toSort.subList(mid, toSort.size());[m
+[31m-[m
+[31m-        mergeSort(left, metrics);[m
+[31m-        mergeSort(right, metrics);[m
+[31m-[m
+[31m-        merge(toSort, left, right, metrics);[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void merge(List<T> toSort, List<T> left, List<T> right, SortingMetrics metrics) {[m
+[31m-    // Implementierung des Merge-Schritts[m
+[31m-}[m
+[31m-4.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n log n).[m
+[31m-Durchschnittsfall: O(n log n).[m
+[31m-Schlechtestfall: O(n log n).[m
+[31m-4.4 Anwendungen:[m
+[31m-Merge Sort wird verwendet, wenn:[m
+[31m-Stabile Sortierung erforderlich ist.[m
+[31m-Es auf externe Datensätze angewendet wird (z. B. Sortieren von Dateien auf der Festplatte).[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-5. Selection Sort:[m
+[31m-[m
+[31m-5.1 Beschreibung von Verfahren:[m
+[31m-Selection Sort ist ein einfacher, aber ineffizienter Sortieralgorithmus. Es sucht das Minimum in der unsortierten Liste und tauscht es mit dem ersten Element.[m
+[31m-[m
+[31m-5.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    int n = toSort.size();[m
+[31m-    for (int i = 0; i < n - 1; i++) {[m
+[31m-        int minIndex = i;[m
+[31m-        for (int j = i + 1; j < n; j++) {[m
+[31m-            metrics.incrementCompares();[m
+[31m-            if (toSort.get(j).compareTo(toSort.get(minIndex)) < 0) {[m
+[31m-                minIndex = j;[m
+[31m-            }[m
+[31m-        }[m
+[31m-        swap(toSort, i, minIndex);[m
+[31m-        metrics.incrementMoves();[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-5.3 Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n^2).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Schlechtestfall: O(n^2).[m
+[31m-[m
+[31m-5.4 Anwendungen:[m
+[31m-Selection Sort wird selten verwendet, da es ineffizient für große Datenmengen ist. Es wird eher zu Lehrzwecken eingesetzt.[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-6. Hybrid Quick-Insertion Sort:[m
+[31m-6.1 Beschreibung von Verfahren:[m
+[31m-Der Hybrid Quick-Insertion Sort kombiniert die Vorteile von Quick Sort und Insertion Sort. Quick Sort wird für größere Teillisten verwendet, während für kleinere Teillisten auf Insertion Sort umgeschaltet wird, um die Overhead-Kosten der Rekursion zu minimieren.[m
+[31m-[m
+[31m-6.2 Implementierungen:[m
+[31m-Quelltext:[m
+[31m-@Override[m
+[31m-public <T extends Comparable<T>> void sort(List<T> toSort, SortingMetrics metrics) {[m
+[31m-    hybridQuickInsertionSort(toSort, 0, toSort.size() - 1, metrics);[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void hybridQuickInsertionSort(List<T> toSort, int low, int high, SortingMetrics metrics) {[m
+[31m-    if (low < high) {[m
+[31m-        if (high - low + 1 <= INSERTION_SORT_THRESHOLD) {[m
+[31m-            insertionSort(toSort, low, high, metrics);[m
+[31m-        } else {[m
+[31m-            int pivotIndex = chooseRandomPivotIndex(low, high);[m
+[31m-            pivotIndex = partition(toSort, low, high, pivotIndex, metrics);[m
+[31m-[m
+[31m-            hybridQuickInsertionSort(toSort, low, pivotIndex - 1, metrics);[m
+[31m-            hybridQuickInsertionSort(toSort, pivotIndex + 1, high, metrics);[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-private <T extends Comparable<T>> void insertionSort(List<T> toSort, int low, int high, SortingMetrics metrics) {[m
+[31m-    // Implementierung von Insertion Sort[m
+[31m-}[m
+[31m-[m
+[31m-6.3 [m
+[31m-Best-, Durchschnitts-, und Schlechtestfall:[m
+[31m-Best Case: O(n log n) (bei geschickter Pivot-Wahl).[m
+[31m-Durchschnittsfall: O(n log n).[m
+[31m-Schlechtestfall: O(n^2) (bei ungünstiger Pivot-Wahl).[m
+[31m-[m
+[31m-6.4 Anwendungen:[m
+[31m-Der Hybrid Quick-Insertion Sort wird verwendet, wenn:[m
+[31m-Schnelle Sortierung großer Datenmengen erforderlich ist.[m
+[31m-Platzkomplexität wichtig ist (im Vergleich zu Merge Sort).[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-Testing:[m
+[31m-[m
+[31m-/**[m
+[31m- * Dokumentation der Tests für Alle Sorting Algorithmus.[m
+[31m- *[m
+[31m- * Die Klasse Test enthält immer drei Testmethoden, um Alle Sort Algorithmus mit verschiedenen[m
+[31m- * Listenarten zu überprüfen: umgekehrt geordnet, zufällig geordnet und teilweise geordnet.[m
+[31m- *[m
+[31m- * 1. Umgekehrt Geordnete Liste (Reverse Ordered):[m
+[31m- *    - Testmethode: testAlgorithm..gibName()_rev()[m
+[31m- *    - Beschreibung: Diese Methode überprüft, ob der Sort Algorithmus eine umgekehrt geordnete Liste korrekt[m
+[31m- *                    in aufsteigender Reihenfolge sortieren kann.[m
+[31m- *    - Vorgehen: Eine umgekehrt geordnete Liste wird erstellt und mit dem  Sort Algorithmus sortiert.[m
+[31m- *                Das Ergebnis wird mit der erwarteten sortierten Liste verglichen.[m
+[31m- *[m
+[31m- * 2. Zufällig Geordnete Liste (Random Ordered):[m
+[31m- *    - Testmethode: testAlgorithm..gibName()_ran()[m
+[31m- *    - Beschreibung: Diese Methode überprüft, ob derSort Algorithmus eine zufällig geordnete Liste korrekt[m
+[31m- *                    in aufsteigender Reihenfolge sortieren kann.[m
+[31m- *    - Vorgehen: Eine zufällig geordnete Liste wird erstellt und mit dem Sort Algorithmus sortiert.[m
+[31m- *                Das Ergebnis wird mit der erwarteten sortierten Liste verglichen.[m
+[31m- *[m
+[31m- * 3. Teilweise Geordnete Liste (Partially Ordered):[m
+[31m- *    - Testmethode: testAlgorithm..gibName()_par()[m
+[31m- *    - Beschreibung: Diese Methode überprüft, ob der Sort Algorithmus eine teilweise geordnete Liste korrekt[m
+[31m- *                    in aufsteigender Reihenfolge sortieren kann.[m
+[31m- *    - Vorgehen: Eine teilweise geordnete Liste wird erstellt und mit dem Sort Algorithmus sortiert.[m
+[31m- *                Das Ergebnis wird mit der erwarteten sortierten Liste verglichen.[m
+[31m- *[m
+[31m- * Generell:[m
+[31m- *    - Jeder Test erstellt eine Instanz des Sort Algorithmus und der SortingMetrics-Klasse,[m
+[31m- *      um Metriken wie Vergleiche und Bewegungen zu verfolgen.[m
+[31m- *    - Die zu sortierende Liste wird erstellt und mit dem Algorithmus sortiert.[m
+[31m- *    - Das Ergebnis wird mit einer vordefinierten erwarteten sortierten Liste verglichen.[m
+[31m- *    - Bei erfolgreicher Sortierung wird eine Erfolgsmeldung ausgegeben.[m
+[31m- */[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[1mdiff --git a/Comparision_Millions.pdf b/Comparision_Millions.pdf[m
+[1mdeleted file mode 100644[m
+[1mindex d9bdf37..0000000[m
+[1m--- a/Comparision_Millions.pdf[m
+[1m+++ /dev/null[m
+[36m@@ -1,40 +0,0 @@[m
+[31m-Algothrimen und Datenstruckturen – implementieren von Sortierverfahren[m
+[31m-Ergänzung[m
+[31m-Prateek Kalra ;René Rekowski[m
+[31m-Praktikumsgruppe: 3[m
+[31m-Teamnummer: unbekannt[m
+[31m-Termin 21.11.2023[m
+[31m-[m
+[31m-Dies unsere Verbesserung von unsere Zweiten Aufgabe. Indem wir die Anzahl der Operationen[m
+[31m-benutzt haben statt die zeit und haben mehr Messungen mit größeren Listen benutzt.[m
+[31m-Bubblesort[m
+[31m-[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Avg. Case: O(n^2).[m
+[31m-Worst Case: O(n^2).[m
+[31m-Auch in diesem Beispiel lässt sich sehr gut der Verlauf der Notation(O(n^2)) erkennen.[m
+[31m-Quicksort[m
+[31m-Best Case: O(n log n) (bei geschickter Pivot-Wahl).[m
+[31m-Avg: O(n log n).[m
+[31m-Worst Case: O(n^2) (bei ungünstiger Pivot-Wahl).[m
+[31m-Am Quicksort lässt sich gut die O(n log n) Notation erkennen, somit ist unserem Beispiel ein[m
+[31m-Durchschnittlicher Fall eingetreten.[m
+[31m-[m
+[31m-Mergesort[m
+[31m-Best Case: O(n log n).[m
+[31m-Avg. Case: O(n log n).[m
+[31m-Worst Case: O(n log n).[m
+[31m-Die Kurve der Merde Sort ähnelt auch sehr start der O(n log n) Notation.[m
+[31m-[m
+[31m-Selectionsort[m
+[31m-Best Case: O(n^2).[m
+[31m-Avg. Case: O(n^2).[m
+[31m-Worst Case: O(n^2)[m
+[31m-Trotz mehrere und größere Messungen lässt sich nur teilweise der Aufstieg der Kurve erkennen und[m
+[31m-[m
+[31m-Insertsort[m
+[31m-Best Case: O(n) (Liste bereits sortiert).[m
+[31m-Durchschnittsfall: O(n^2).[m
+[31m-Worst Case: O(n^2).[m
+[31m-Die Kurven Steigung lässt sich nur am Anfang erkennen. Trotz mehrere und größeren Messungen[m
+[31m-[m
+[1mdiff --git a/Elapsed Time in nano seconds.txt b/Elapsed Time in nano seconds.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 8bb67c0..0000000[m
+[1m--- a/Elapsed Time in nano seconds.txt[m	
+[1m+++ /dev/null[m
+[36m@@ -1,108 +0,0 @@[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-  for size 50000 Insertion Sort; MOVE: 625356470; COMPARE:625306471[m
+[31m-  for size 100000 Insertion Sort; MOVE: 1163283069; COMPARE:1163433067[m
+[31m-  for size 200000 Insertion Sort; MOVE: 254770447; COMPARE:254420450[m
+[31m-  for size 300000 Insertion Sort; MOVE: 1295223251; COMPARE:1294573255[m
+[31m-  for size 400000 Insertion Sort; MOVE: 1622316163; COMPARE:1623366158[m
+[31m-  for size 500_000 Insertion Sort; MOVE: 746101915; COMPARE:744551921[m
+[31m-  for size 600_000 Insertion Sort; MOVE: 725282366; COMPARE:723132373[m
+[31m-  for size 800_000 Insertion Sort; MOVE: 1570778715; COMPARE:1567828723[m
+[31m-----------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-[m
+[31m-  for size 50000 Bubble Sort; MOVE: 624188680; COMPARE:1249922350[m
+[31m-  for size 100000 Bubble Sort; MOVE: 1167838461; COMPARE:1954828026[m
+[31m-  for size 200000 Bubble Sort; MOVE: 237934017; COMPARE:479880520[m
+[31m-  for size 300000 Bubble Sort; MOVE: 1283046533; COMPARE:1765027106[m
+[31m-  for size 400000 Bubble Sort; MOVE: 1645327489; COMPARE:925142775[m
+[31m-  for size 500_000 Bubble Sort; MOVE: 747133557; COMPARE:1370574376[m
+[31m-[m
+[31m-[m
+[31m------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-[m
+[31m-  for size 200000 Quick Sort; MOVE: 2220752; COMPARE:4354442[m
+[31m-  for size 400000 Quick Sort; MOVE: 6632686; COMPARE:13171417[m
+[31m-  for size 600000 Quick Sort; MOVE: 13449509; COMPARE:27035311[m
+[31m-  for size 800000 Quick Sort; MOVE: 22819277; COMPARE:45935078[m
+[31m-  for size 900000 Quick Sort; MOVE: 33308755; COMPARE:68263532[m
+[31m-  for size 200_0000 Quick Sort; MOVE: 58968815; COMPARE:119392707[m
+[31m-  for size 400_0000 Quick Sort; MOVE: 111342245; COMPARE:226835312[m
+[31m-  for size 600_0000 Quick Sort; MOVE: 192905310; COMPARE:395835600[m
+[31m-  for size 700_0000 Quick Sort; MOVE: 297298631; COMPARE:602648293[m
+[31m-  for size 800_0000 Quick Sort; MOVE: 418670741; COMPARE:843988988[m
+[31m-  for size 14_000_000 MergeSort; MOVE: 626458399; COMPARE:1258977684[m
+[31m-  for size 16_000_000 MergeSort; MOVE: 827849759; COMPARE:1667730728[m
+[31m------------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-  for size 200000 MergeSort; MOVE: 3537856; COMPARE:3272531[m
+[31m-  for size 400000 MergeSort; MOVE: 11013568; COMPARE:10217446[m
+[31m-  for size 600000 MergeSort; MOVE: 22564992; COMPARE:20986478[m
+[31m-  for size 800000 MergeSort; MOVE: 38316416; COMPARE:35677660[m
+[31m-  for size 900000 MergeSort; MOVE: 56167840; COMPARE:52356329[m
+[31m-  for size 200_000 MergeSort; MOVE: 98070688; COMPARE:91704944[m
+[31m-  for size 400_000 MergeSort; MOVE: 185876384; COMPARE:174401398[m
+[31m-  for size 600_000 MergeSort; MOVE: 321487776; COMPARE:302045152[m
+[31m-  for size 700_000 MergeSort; MOVE: 481099168; COMPARE:452493027[m
+[31m-  for size 8000_000 MergeSort; MOVE: 664710560; COMPARE:625886169[m
+[31m-  for size 14_000_000 MergeSort; MOVE: 997933344; COMPARE:940780549[m
+[31m-  for size 16_000_000 MergeSort; MOVE: 1331156128; COMPARE:1110177605[m
+[31m------------------------------------------------------------------------------------------[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-  for size 50000 Selection Sort; MOVE: 49987; COMPARE:1249975000[m
+[31m-  for size 100000 Selection Sort; MOVE: 149967; COMPARE:1954957704[m
+[31m-  for size 200000 Selection Sort; MOVE: 349955; COMPARE:480021224[m
+[31m-  for size 300000 Selection Sort; MOVE: 649944; COMPARE:1764769032[m
+[31m-  for size 400000 Selection Sort; MOVE: 1049927; COMPARE:925619640[m
+[31m-  for size 500000 Selection Sort; MOVE: 1549907; COMPARE:1371318056[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[1mdiff --git a/Praktikum2.iml b/Praktikum2.iml[m
+[1mdeleted file mode 100644[m
+[1mindex 9fcc613..0000000[m
+[1m--- a/Praktikum2.iml[m
+[1m+++ /dev/null[m
+[36m@@ -1,12 +0,0 @@[m
+[31m-<?xml version="1.0" encoding="UTF-8"?>[m
+[31m-<module type="JAVA_MODULE" version="4">[m
+[31m-  <component name="NewModuleRootManager" inherit-compiler-output="true">[m
+[31m-    <exclude-output />[m
+[31m-    <content url="file://$MODULE_DIR$">[m
+[31m-      <sourceFolder url="file://$MODULE_DIR$/Praktikum 2/SortingWorkbench/SortingWorkbench/src" isTestSource="false" />[m
+[31m-      <sourceFolder url="file://$MODULE_DIR$/Praktikum 2/SortingWorkbench/SortingWorkbench/tst" isTestSource="true" />[m
+[31m-    </content>[m
+[31m-    <orderEntry type="inheritedJdk" />[m
+[31m-    <orderEntry type="sourceFolder" forTests="false" />[m
+[31m-  </component>[m
+[31m-</module>[m
+\ No newline at end of file[m
