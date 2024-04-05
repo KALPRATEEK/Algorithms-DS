@@ -1,0 +1,75 @@
+Abgabe 3 (Notes)
+
+The Consumer interface represents an operation that accepts a single input argument and returns no result. It is defined as follows:
+
+java
+Copy code
+@FunctionalInterface
+public interface Consumer<T> {
+    void accept(T t);
+    
+    // Other default and static methods may be present in Java's functional interfaces
+    // ...
+}
+Here, T represents the type of the input argument to the operation. The accept method is the abstract method that you need to implement when you use the Consumer interface.
+
+The purpose of the Consumer interface is to provide a way to represent an operation that takes an argument of type T and performs some action on it, without returning any result.
+
+You can use the Consumer interface in various scenarios, such as iterating over a collection and performing an action on each element, handling events, or
+ any other situation where you need to process a value without returning a result.
+
+Eg.
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+
+        // Using a Consumer to print each element of the list
+        names.forEach(new MyConsumer());
+    }
+
+    // Custom implementation of Consumer
+    static class MyConsumer implements Consumer<String> {
+        @Override
+        public void accept(String name) {
+            System.out.println("Hello, " + name);
+        }
+    }
+}
+In this example, the MyConsumer class implements the Consumer<String> interface and defines the accept method to print a greeting for each name in the list. The forEach method is then used to apply the Consumer to each element of the list.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Major Differences between DFS and BFS:
+Order of Exploration:
+
+DFS: Explores as far as possible along each branch before backtracking. It uses a stack to keep track of nodes to visit.
+BFS: Explores all the neighbors of a node before moving on to the next level. It uses a queue to keep track of nodes to visit.
+Data Structure:
+
+DFS: Typically implemented using a stack (either explicit or through recursion).
+BFS: Typically implemented using a queue.
+Memory Usage:
+
+DFS: May use less memory as it only needs to store a single path from the root to the current node.
+BFS: May use more memory as it needs to store all nodes at the current level before moving to the next level.
+Completeness:
+
+DFS: Does not always find the shortest path between two nodes.
+BFS: Guarantees finding the shortest path between two nodes in an unweighted graph.
+
+DFS with a Stack:
+In DFS, the algorithm explores as far as possible along each branch before backtracking. This means it goes as deep as possible into the graph before exploring neighboring nodes. The use of a stack (either an explicit stack or the call stack in the case of recursive DFS) is natural for this process. When backtracking is needed, the algorithm can pop the most recently visited node off the stack and continue exploring from the previous decision point.
+
+BFS with a Queue:
+In BFS, the algorithm explores all neighbors of a node before moving on to the next level. The nature of BFS is to systematically explore all nodes at the current level before moving to the next level. A queue is used to maintain the order in which nodes are discovered: nodes are enqueued as they are discovered, and dequeued as they are explored.
+
+Why Not Use a Queue in DFS:
+Using a queue in DFS would fundamentally alter the nature of the algorithm. A queue follows the FIFO (First-In-First-Out) principle, which is not suitable for the depth-first exploration strategy. If DFS were implemented with a queue, it would no longer explore as deeply as possible along each branch before backtracking. Instead, it would behave more like BFS, which is not the intended behavior of DFS.
+
+In summary, the choice of using a stack in DFS and a queue in BFS is not arbitrary; it is a key aspect of the algorithms that aligns with their exploration strategies and objectives.
+
+------------------------------------------------------------------------------------------------------------------------
